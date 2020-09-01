@@ -154,7 +154,6 @@ open class KYDrawerController: UIViewController, UIGestureRecognizerDelegate {
             }
 
             guard let mainViewController = mainViewController else { return }
-            addChild(mainViewController)
 
             if isVisible {
                 mainViewController.beginAppearanceTransition(true, animated: false)
@@ -162,6 +161,7 @@ open class KYDrawerController: UIViewController, UIGestureRecognizerDelegate {
 
             mainViewController.view.translatesAutoresizingMaskIntoConstraints = false
             view.insertSubview(mainViewController.view, at: 0)
+            addChild(mainViewController)
 
             NSLayoutConstraint.activate([
                 view.topAnchor.constraint(equalTo: mainViewController.view.topAnchor),
